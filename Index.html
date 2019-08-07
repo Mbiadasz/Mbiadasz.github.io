@@ -1,0 +1,282 @@
+﻿
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<title>Course Project/lab/activity</title>
+			<meta name="viewport" content="width=device-width,initial-scale=1" />
+			<link href="styles/custom.css" rel="stylesheet" type="text/css">
+				<link rel="stylesheet" href="themes/Courseproject.min.css" />
+				<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+				<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+					<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+					<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+					<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+					<script>// Check if the localStorage object exists
+if(localStorage){
+	$(document).ready(function(){
+		$(".save").click(function(){
+			// Get input name
+			var lastName = $("#lastName").val();
+
+			// Store data
+    		sessionStorage.setItem("last_name", lastName);
+			alert("Your last name is saved.");
+		});
+		$(".access").click(function(){
+			// Retrieve data
+    		alert("Hi, " + localStorage.getItem("first_name") + " " + sessionStorage.getItem("last_name"));
+		});
+	});
+} else{
+    alert("Sorry, your browser do not support local storage.");
+}
+</script>
+				</head>
+				<body>
+					<div id="page" data-role="page" data-theme="a" data-add-back-btn="true">
+						<div data-role="header" data-theme="a">
+							<div class="logo">
+								<img src="images/rasmussen_logo.png" width="218" height="45" alt="" />
+							</div>
+						</div>
+						<div data-role="header">
+							<h1>Page Header</h1>
+						</div>
+						<div data-role="content">
+							<ul data-role="listview" data-theme="c">
+								<li>
+									<a href="#Courseproject">Course Project Section</a>
+								</li>
+								<li>
+									<a href="#pizza">Pizza</a>
+								</li>
+								<li>
+									<a href="#music">Music</a>
+								</li>
+								<li>
+									<a href="#games">Games</a>
+								</li>
+								<li>
+									<a href="#form">Form</a>
+								</li>
+								<li>
+									<a href="#module4">Module 4 Lab</a>
+								</li>
+								<li>
+									<a href="#pageone">Module 4 Course Project</a>
+								</li>
+							</ul>
+						</div>
+						<div data-role="footer" data-theme="a">
+							<h4>Your App &copy; 20XX</h4>
+						</div>
+					</div>
+					<div data-role="page">
+						<div data-role="panel" id="module4"></div>
+					</div>
+					<!-- Start of Course project section -->
+					<div data-role="page" id="Courseproject" data-theme="a" data-add-back-btn="true">
+						<div data-role="header" data-theme="a" data-add-back-btn="true">
+							<h1>Header</h1>
+						</div>
+						<div data-role="content">
+							<div data-role="content">
+								<ul data-role="content" data-filter="true">
+									<li>test1</li>
+									<li>test2</li>
+									<li>test3</li>
+								</ul>
+								<br>
+									<form>
+                    First name:
+
+
+										<br>
+											<input type="text" name="firstname">
+												<br> Middle name:
+
+
+													<br>
+														<input type="text" name="middlename"> Last name:
+
+
+															<br>
+																<input type="text" name="lastname"> Born in year:
+
+
+																	<input type="text" name="year"> Birth month:
+
+
+																		<input type="text" name="month">
+																			<input type="submit" value="Submit">
+																			</form>
+																			<br>
+																				<div id="result"></div>
+																				<script>
+                    function clickCounter() {
+                        if (typeof(Storage) !== "undefined") {
+                            if (localStorage.clickcount) {
+                                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                            } else {
+                                localStorage.clickcount = 1;
+                            }
+                            document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+                        } else {
+                            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+                        }
+                    }
+                </script>
+																				<p>
+																					<button onclick="clickCounter()" type="button">Click me!</button>
+																				</p>
+																				<div id="result"></div>
+																				<p>Click the button to see the counter increase.</p>
+																				<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+																			</div>
+																			<div data-role="footer" data-theme="a">
+																				<h4>Footer</h4>
+																			</div>
+																		</div>
+																		<!-- End of Course Project Section -->
+																		<!-- Start of Lab/Activity Sections -->
+																	</div>
+																	<div data-role="page" id="pizza" data-theme="a" data-add-back-btn="true">
+																		<div data-role="header" data-theme="a" data-add-back-btn="true">
+																			<h1>Header</h1>
+																		</div>
+																		<div data-role="content">
+																			<ol>
+																				<li>Cheese</li>
+																				<li>Sausage</li>
+																				<li>Ham</li>
+																			</ol>
+																		</div>
+																		<div data-role="footer" data-theme="a">
+																			<h4>Footer</h4>
+																		</div>
+																	</div>
+																<div data-role="page" id="music" data-theme="a" data-add-back-btn="true"></div>
+																<div data-role="header" data-theme="a" data-add-back-btn="true">
+																	<h1>Header</h1>
+																</div>
+																<div data-role="content">
+																	<ul>
+																		<li>Skillet</li>
+																		<li>Hollywood Undead</li>
+																		<li>Metallica</li>
+																	</ul>
+																</div>
+																<div data-role="footer" data-theme="a">
+																	<h4>Footer</h4>
+																</div>
+
+															<div data-role="page" id="games" data-theme="a" data-add-back-btn="true">
+																<div data-role="header" data-theme="a" data-add-back-btn="true">
+																	<h1>Header</h1>
+																</div>
+																<div data-role="content">
+																	<ul data-role="content" data-filter="true">
+																		<li>Overwatch</li>
+																		<li>Diablo</li>
+																		<li>Call of Duty</li>
+																	</ul>
+																</div>
+																<div data-role="footer" data-theme="a">
+																	<h4>Footer</h4>
+																</div>
+															</div>
+															<!-- Start of Module 4 -->
+															<div data-role="page" id="module4" data-theme="a" data-add-back-btn="true">
+																<div data-role="header" data-theme="a" data-add-back-btn="true">
+																	<h1>Grid</h1>
+																</div>
+																<div data-role="content">
+																	<div class="ui-grid-b">
+																		<div class="ui-block-a">
+																			<div class="ui-bar ui-bar-a" style="height:60px">Block A</div>
+																		</div>
+																		<div class="ui-block-b">
+																			<div class="ui-bar ui-bar-a" style="height:60px">Block B</div>
+																		</div>
+																		<div class="ui-block-c">
+																			<div class="ui-bar ui-bar-a" style="height:60px">Block C</div>
+																		</div>
+																	</div>
+																</div>
+																</div>
+																<!-- Module 4 Course Project -->
+																<div data-role="page" id="pageone" data-add-back-btn="true">
+																	<div data-role="panel" id="myPanel" data-add-back-btn="true">
+																		<h2>Panel Header</h2>
+																		<p>This is the panel for the course project, if you click out of this you will see the grid portion.</p>
+																	</div>
+																	<div data-role="header">
+																		<h1>Page Header</h1>
+																	</div>
+																	<div data-role="main" class="ui-content">
+																		<a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a>
+																		<form>
+																			<label>Last Name:
+
+																				<input type="text" id="lastName">
+																				</label>
+																				<button type="button" class="save">Save Name</button>
+																				<button type="button" class="access">Get Name</button>
+																			</form>
+																			<br>
+																			</div>
+																			<div data-role="content">
+																				<div class="ui-grid-b">
+																					<div class="ui-block-a">
+																						<div class="ui-bar ui-bar-a" style="height:50px">Block A</div>
+																					</div>
+																					<div class="ui-block-b">
+																						<div class="ui-bar ui-bar-a" style="height:50px">Block B</div>
+																					</div>
+																					<div class="ui-block-c">
+																						<div class="ui-bar ui-bar-a" style="height:50px">Block C</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div data-role="page" id="form" data-theme="a" data-add-back-btn="true">
+																			<div data-role="header" data-theme="a" data-add-back-btn="true">
+																				<h1>Form</h1>
+																			</div>
+																			<div data-role="content">
+																				<form>
+                    First name:
+
+
+																					<br>
+																						<input type="text" name="firstname">
+																							<br> Middle name:
+
+
+																								<br>
+																									<input type="text" name="middlename"> Last name:
+
+
+																										<br>
+																											<input type="text" name="lastname">
+																												<input type="submit" value="Submit">
+																												</form>
+																											</div>
+																											<div data-role="footer" data-theme="a">
+																												<h4>Footer</h4>
+																											</div>
+																										</div>
+																										<div data-role="footer" data-theme="a">
+																											<h4>Footer</h4>
+																											<section class="footer_banner" id="contact"></section>
+																											<div class="copyright">&copy;2019 -
+
+																												<strong>Footer</strong>
+																											</div>
+																										</div>
+																									</body>
+																								</html>
+																								<!-- End of Lab/Activity Sections -->
